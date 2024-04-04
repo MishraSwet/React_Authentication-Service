@@ -9,14 +9,21 @@ const Login: React.FC = () => {
     const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
     }
+    const submitHandler = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    }
     return (
         <>
-        <div>Login</div>
-            <form>
-                <label>Login</label>
-                <input type="text" value={login} onChange={handleLogin}></input>
-                <label>Password</label>
-                <input type="text" value={password} onChange={handlePassword}></input>
+            <form onSubmit={submitHandler}>
+                <div>
+                    <label>Login</label>
+                    <input type="text" value={login} onChange={handleLogin}></input>
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type="text" value={password} onChange={handlePassword}></input>
+                </div>
+                <button type="submit">Login</button>
             </form>
         </>
     );
