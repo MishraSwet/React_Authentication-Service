@@ -8,6 +8,7 @@ const Signup: React.FC = () => {
 
     return (
         <>
+            useEffect(()=>{});
             <div>
                 <label htmlFor='Name'>FirstName</label>
                 <input type="text" value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
