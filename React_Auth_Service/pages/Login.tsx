@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 const Login: React.FC = () => {
     const [login, setLogin] = useState("");
@@ -12,6 +12,9 @@ const Login: React.FC = () => {
     const submitHandler = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
+    useEffect(() => {
+        fetch("api/something.com").then(res => res.json).then(data => console.log(data))
+    }, []);
     return (
         <>
             <form onSubmit={submitHandler}>
