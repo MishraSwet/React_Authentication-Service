@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 const Signup: React.FC = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-
+    useEffect(()=>{
+        fetch("api/something.com").then(res=>res.json).then(data=>console.log(data))
+    },[]);
     return (
         <>
-            useEffect(()=>{});
             <div>
                 <label htmlFor='Name'>FirstName</label>
                 <input type="text" value={name} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}></input>
